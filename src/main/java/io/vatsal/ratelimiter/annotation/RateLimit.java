@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface RateLimit {
-  long limitPerMinute();
+  long limitPerMinute() default Long.MAX_VALUE;
 
-  long limitPerHour();
+  long limitPerHour() default Long.MAX_VALUE;
 }
