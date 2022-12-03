@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Counter {
-    long timeStamp; //in epoch second
-    long count;
+  long timeStamp;
+  long count;
 }

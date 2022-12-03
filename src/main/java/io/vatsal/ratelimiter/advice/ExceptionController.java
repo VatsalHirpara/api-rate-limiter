@@ -14,12 +14,12 @@ import java.util.Map;
 @ControllerAdvice
 public class ExceptionController {
 
-    @ExceptionHandler(ApiLimitExceededException.class)
-    public ResponseEntity<Object> handleCityNotFoundException(ApiLimitExceededException ex, WebRequest request) {
-        Map<String, Object> body = new LinkedHashMap<>();
-        body.put("timestamp", LocalDateTime.now());
-        body.put("message", "API limit has been exceeded");
-        return new ResponseEntity<>(body, HttpStatus.TOO_MANY_REQUESTS);
-    }
-
+  @ExceptionHandler(ApiLimitExceededException.class)
+  public ResponseEntity<Object> handleCityNotFoundException(
+      ApiLimitExceededException ex, WebRequest request) {
+    Map<String, Object> body = new LinkedHashMap<>();
+    body.put("timestamp", LocalDateTime.now());
+    body.put("message", "API limit has been exceeded");
+    return new ResponseEntity<>(body, HttpStatus.TOO_MANY_REQUESTS);
+  }
 }
