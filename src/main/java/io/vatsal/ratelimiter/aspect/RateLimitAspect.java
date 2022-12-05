@@ -30,7 +30,8 @@ public class RateLimitAspect {
         userId,
         rateLimit.limitPerMinute(),
         rateLimit.limitPerHour());
-    if (rateLimitingService.isLimitExceeded(userId))
+
+    if (rateLimitingService.isLimitExceeded(userId, method.getName()))
       throw new ApiLimitExceededException("Limit Exceeded");
   }
 }
